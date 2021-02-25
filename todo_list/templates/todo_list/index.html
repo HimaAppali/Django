@@ -1,0 +1,14 @@
+{% extends "todo_list/layout.html" %}
+
+{% block body %}
+<h1>Todo list items: </h1>
+<!-- in urls.py we gave the name as add and todo is the app_name specificied in urls file -- this is equla to a tag href= /todo-list/add  -->
+<a href="{% url 'todo:add' %}">Add new item</a>
+<ul>
+    {% for item in tasks %}
+    <li>{{ item }}</li>
+    {% empty %}
+    <li> No tasks to view</li>
+    {% endfor %}
+</ul>
+{% endblock %}

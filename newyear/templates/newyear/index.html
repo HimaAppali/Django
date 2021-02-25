@@ -1,0 +1,16 @@
+{% load static %}
+<!Doctype HTML>
+<html>
+    <head>
+        <title>Is it New Year ?</title>
+        <link href="{% static 'newyear/styles.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <!-- below shows logical operations in html page using django  & newyear variable comes from views.py page-->
+        {% if newyear %}
+            <h1> YES </h1>
+        {% else %}
+            <h1> NO </h1>
+        {% endif %}
+    </body>
+</html>

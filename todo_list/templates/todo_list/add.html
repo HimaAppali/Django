@@ -1,0 +1,18 @@
+{% extends "todo_list/layout.html" %}
+
+{% block body %}
+<h1>
+    Add Item to list
+</h1>
+<form action="{% url 'todo:add' %}" method="POST">
+    <!-- without csrf_token we will get 403 forbidden error. csrf_token is available in settings.py -->
+    {% csrf_token %}
+    <!-- in urls.py we gave the name as index and todo is the app_name specificied in urls file-->
+    <a href="{% url 'todo:index' %}">Back to view tasks</a>
+    <!-- form comes from views.py -->
+    {{ form }}
+    <!-- below is the static form  -->
+    <!-- <input type="text" name="additem" placeholder="Enter item to be added" value=""> -->
+    <input type="submit">
+</form>
+{% endblock %}
